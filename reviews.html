@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guest Reviews | Aegean Dream House</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <nav>
+        <a href="index.html" class="logo">🌊 Aegean Dream House</a>
+        <div class="menu-toggle" id="mobile-menu">
+            <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+        </div>
+        <div class="nav-links" id="nav-links">
+            <a href="index.html">Home</a>
+            <a href="villa.html">The Villa</a>
+            <a href="town.html">The Town</a>
+            <a href="reviews.html" style="color: var(--accent-blue);">Guest Reviews</a>
+            <a href="https://www.booking.com/Share-u95qrv" target="_blank" class="btn">Book Now</a>
+        </div>
+    </nav>
+
+    <section class="section">
+        <h2 class="section-title fade-up">What Our Guests Say</h2>
+        
+        <div class="review-form fade-up">
+            <h3 style="margin-bottom: 20px; text-align: center; font-size: 1.8rem;">Share Your Experience</h3>
+            <form id="reviewForm" onsubmit="addReview(event)">
+                <input type="text" id="reviewerName" placeholder="Your Name" required>
+                <select id="reviewRating" required>
+                    <option value="" disabled selected>Select Your Rating</option>
+                    <option value="5">⭐⭐⭐⭐⭐ - Excellent (10/10)</option>
+                    <option value="4">⭐⭐⭐⭐ - Very Good</option>
+                    <option value="3">⭐⭐⭐ - Good</option>
+                </select>
+                <textarea id="reviewText" rows="5" placeholder="Tell us about your stay at Aegean Dream House..." required></textarea>
+                <button type="submit" class="btn" style="width: 100%;">Post Review</button>
+            </form>
+        </div>
+
+        <div class="grid" id="reviewList">
+            <div class="card fade-up" style="border-top-color: #fbbf24;">
+                <h4 style="margin-bottom: 5px; font-size: 1.3rem;">Booking.com Guest</h4>
+                <div style="color: #fbbf24; margin-bottom: 15px; font-size: 1.2rem;">★★★★★</div>
+                <p style="font-style: italic;">"Exceptional! The house is beautifully maintained, and the sea views from the balcony are absolutely breathtaking. The host was incredibly welcoming. Highly recommend!"</p>
+            </div>
+            <div class="card fade-up" style="border-top-color: #fbbf24;">
+                <h4 style="margin-bottom: 5px; font-size: 1.3rem;">Booking.com Guest</h4>
+                <div style="color: #fbbf24; margin-bottom: 15px; font-size: 1.2rem;">★★★★★</div>
+                <p style="font-style: italic;">"Perfect location, very clean, and the kitchen had absolutely everything we needed. We felt right at home the moment we walked in."</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <h2 style="font-family: 'Georgia', serif; margin-bottom: 10px;">Aegean Dream House</h2>
+        <p>Paralia Ofriniou, Greece | Contact: +359 88 285 0909</p>
+    </footer>
+
+    <script>
+        // Mobile Menu
+        document.getElementById('mobile-menu').addEventListener('click', function() {
+            document.getElementById('nav-links').classList.toggle('active');
+        });
+
+        // Review Form Logic
+        function addReview(event) {
+            event.preventDefault();
+            
+            const name = document.getElementById('reviewerName').value;
+            const rating = parseInt(document.getElementById('reviewRating').value);
+            const text = document.getElementById('reviewText').value;
+
+            const reviewList = document.getElementById('reviewList');
+            const newReview = document.createElement('div');
+            newReview.className = 'card fade-up visible'; // Add 'visible' so new reviews show immediately
+            newReview.style.borderTopColor = '#fbbf24';
+            
+            let stars = '';
+            for(let i=0; i<rating; i++) { stars += '★'; }
+
+            newReview.innerHTML = `
+                <h4 style="margin-bottom: 5px; font-size: 1.3rem;">${name}</h4>
+                <div style="color: #fbbf24; margin-bottom: 15px; font-size: 1.2rem;">${stars}</div>
+                <p style="font-style: italic;">"${text}"</p>
+            `;
+
+            reviewList.prepend(newReview);
+            document.getElementById('reviewForm').reset();
+        }
+
+        // Scroll Fade-In Observer
+        const fadeElements = document.querySelectorAll('.fade-up');
+        const appearOptions = { threshold: 0.15, rootMargin: "0px 0px -50px 0px" };
+        const appearOnScroll = new IntersectionObserver(function(entries, observer) {
+            entries.forEach(entry => {
+                if (!entry.isIntersecting) return;
+                entry.target.classList.add('visible');
+                observer.unobserve(entry.target);
+            });
+        }, appearOptions);
+
+        fadeElements.forEach(element => appearOnScroll.observe(element));
+    </script>
+</body>
+</html>

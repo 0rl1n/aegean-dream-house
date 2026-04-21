@@ -1,0 +1,186 @@
+/* --- style.css (The Dreamy Resort Upgrade) --- */
+:root {
+    --primary-blue: #023e73; /* A deeper, calmer ocean blue */
+    --accent-blue: #0081c9; /* Vibrant water blue */
+    --light-bg: #f8fafc; /* A very soft, airy off-white */
+    --text-dark: #334155; /* Slate grey, much softer on the eyes than black */
+    --white: #ffffff;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+}
+
+html {
+    scroll-behavior: smooth; /* Smooth scrolling between sections */
+}
+
+body {
+    color: var(--text-dark);
+    line-height: 1.8; /* Increased line height for a more relaxed read */
+    background-color: var(--light-bg);
+}
+
+/* Elegant Headings */
+h1, h2, h3 {
+    font-family: 'Georgia', serif;
+    font-weight: normal;
+    letter-spacing: 0.5px;
+}
+
+/* Glassmorphism Navigation (Frosted Glass Effect) */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 50px;
+    background: rgba(255, 255, 255, 0.75); /* More transparent */
+    backdrop-filter: blur(20px); /* Heavy frosted glass blur */
+    -webkit-backdrop-filter: blur(20px); /* For Apple devices */
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.03);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    flex-wrap: wrap;
+}
+
+.logo { font-size: 26px; font-weight: bold; color: var(--primary-blue); text-decoration: none; font-family: 'Georgia', serif; }
+.nav-links { display: flex; align-items: center; }
+.nav-links a { text-decoration: none; color: var(--text-dark); margin: 0 15px; font-weight: 500; font-size: 1.05rem; position: relative; transition: color 0.4s ease; }
+.nav-links a::after { content: ''; position: absolute; width: 0; height: 2px; bottom: -5px; left: 0; background-color: var(--accent-blue); transition: width 0.4s ease; }
+.nav-links a:hover { color: var(--accent-blue); }
+.nav-links a:hover::after { width: 100%; }
+
+/* Soft Glowing Buttons */
+.btn {
+    background: linear-gradient(135deg, #0081c9, #023e73);
+    color: var(--white) !important;
+    padding: 12px 30px;
+    text-decoration: none;
+    border-radius: 40px; /* Fully rounded pill shape */
+    font-weight: 600;
+    font-family: sans-serif;
+    display: inline-block;
+    transition: all 0.5s cubic-bezier(0.2, 0.8, 0.2, 1);
+    border: none;
+    text-align: center;
+    box-shadow: 0 8px 25px rgba(0, 129, 201, 0.3);
+}
+.btn:hover { 
+    transform: translateY(-3px); 
+    box-shadow: 0 12px 30px rgba(0, 129, 201, 0.5); 
+}
+.btn::after { display: none; }
+
+/* Hero Section */
+header { 
+    color: var(--white); 
+    text-align: center; 
+    padding: 200px 20px; /* Taller banner */
+    position: relative;
+}
+header h1 { 
+    font-size: 4rem; 
+    margin-bottom: 15px; 
+    text-shadow: 0 4px 15px rgba(0,0,0,0.4); 
+    animation: fadeInDown 1.5s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+header p { 
+    font-size: 1.4rem; 
+    max-width: 700px; 
+    margin: 0 auto 40px auto; 
+    text-shadow: 0 2px 10px rgba(0,0,0,0.4); 
+    animation: fadeInUp 1.5s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+/* Custom Initial Page Load Animations */
+@keyframes fadeInDown {
+    from { opacity: 0; transform: translateY(-30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Sections & Grids */
+.section { padding: 100px 20px; max-width: 1200px; margin: auto; }
+.section-title { text-align: center; font-size: 2.8rem; color: var(--primary-blue); margin-bottom: 60px; }
+.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 50px; }
+
+/* Soft, Floating Cards */
+.card {
+    background: var(--white); 
+    border-radius: 24px; /* Much softer, rounder corners */
+    overflow: hidden;
+    box-shadow: 0 15px 35px rgba(2, 62, 115, 0.05); /* Soft, ambient blue shadow instead of harsh grey */
+    padding: 40px 30px; 
+    text-align: center;
+    transition: transform 0.6s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.6s ease;
+    border: 1px solid rgba(255,255,255,0.8);
+}
+.card:hover { 
+    transform: translateY(-12px); 
+    box-shadow: 0 25px 50px rgba(2, 62, 115, 0.12); 
+}
+.card h3 { color: var(--primary-blue); margin-bottom: 15px; font-size: 1.8rem; }
+
+/* Cinematic Photo Gallery */
+.photo-gallery { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 25px; }
+.photo-gallery img {
+    width: 100%; height: 280px; object-fit: cover; 
+    border-radius: 16px; /* Softer picture corners */
+    box-shadow: 0 8px 20px rgba(0,0,0,0.08); 
+    transition: transform 0.8s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.8s ease;
+    cursor: pointer;
+}
+.photo-gallery img:hover { 
+    transform: scale(1.03); /* Slower, gentler zoom */
+    box-shadow: 0 15px 35px rgba(0,0,0,0.15); 
+}
+
+/* Lightbox/Modal */
+.modal { display: none; position: fixed; z-index: 2000; padding-top: 60px; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.95); backdrop-filter: blur(8px); }
+.modal-content { margin: auto; display: block; max-width: 90%; max-height: 85vh; border-radius: 12px; box-shadow: 0 10px 40px rgba(0,0,0,0.6); animation-name: gentleZoom; animation-duration: 0.5s; animation-timing-function: cubic-bezier(0.2, 0.8, 0.2, 1); object-fit: contain; }
+@keyframes gentleZoom { from {transform:scale(0.95); opacity: 0} to {transform:scale(1); opacity: 1} }
+.close-modal { position: absolute; top: 20px; right: 40px; color: rgba(255,255,255,0.6); font-size: 45px; transition: 0.4s; cursor: pointer; }
+.close-modal:hover { color: var(--white); transform: rotate(90deg); }
+
+/* Review Form */
+.review-form { background: var(--white); padding: 50px; border-radius: 24px; box-shadow: 0 15px 35px rgba(2, 62, 115, 0.05); margin-bottom: 50px; max-width: 800px; margin-left: auto; margin-right: auto; }
+.review-form input, .review-form textarea, .review-form select { width: 100%; padding: 18px; margin-bottom: 25px; border: 1px solid #e2e8f0; border-radius: 12px; font-size: 1.05rem; transition: all 0.4s ease; background-color: #f8fafc; }
+.review-form input:focus, .review-form textarea:focus, .review-form select:focus { outline: none; border-color: var(--accent-blue); background-color: var(--white); box-shadow: 0 0 0 4px rgba(0, 129, 201, 0.1); }
+
+/* Footer */
+footer { background: #0f172a; color: rgba(255,255,255,0.8); padding: 80px 20px; text-align: center; margin-top: 60px; }
+footer h2 { color: var(--white); }
+
+/* Scroll Animation Classes (Applied by JavaScript) */
+.fade-up {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 1s cubic-bezier(0.2, 0.8, 0.2, 1), transform 1s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+.fade-up.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Mobile */
+.menu-toggle { display: none; cursor: pointer; }
+.bar { display: block; width: 25px; height: 3px; margin: 5px auto; background-color: var(--primary-blue); transition: all 0.3s ease; }
+
+@media (max-width: 768px) {
+    nav { padding: 15px 20px; }
+    .menu-toggle { display: block; }
+    .nav-links { display: none; flex-direction: column; width: 100%; text-align: center; padding-top: 15px; }
+    .nav-links.active { display: flex; }
+    .nav-links a { margin: 10px 0; padding: 10px; width: 100%; }
+    .nav-links a::after { display: none; }
+    header h1 { font-size: 2.8rem; }
+    .modal-content { max-width: 95%; }
+}
