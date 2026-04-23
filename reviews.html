@@ -9,7 +9,7 @@
 <body>
 
     <nav>
-       <a href="index.html" class="logo">
+        <a href="index.html" class="logo">
             🌊 Aegean Dream House
         </a>
         <div class="menu-toggle" id="mobile-menu">
@@ -30,7 +30,7 @@
         <div class="review-form fade-up">
             <h3 style="margin-bottom: 20px; text-align: center; font-size: 1.8rem;">Share Your Experience</h3>
             
-            <form id="reviewForm" action="https://formspree.io/f/maqaalnj" method="POST" enctype="multipart/form-data">
+            <form id="reviewForm" action="https://formspree.io/f/maqaalnj" method="POST">
                 
                 <input type="text" name="Guest Name" placeholder="Your Name" required>
                 
@@ -48,13 +48,12 @@
                 
                 <textarea name="Review Text" rows="5" placeholder="Tell us about your stay at Aegean Dream House..." required></textarea>
                 
-                <div style="margin-bottom: 25px;">
-                    <label style="display: block; margin-bottom: 8px; font-weight: bold; color: var(--primary-blue);">Share your photos (Max 5):</label>
-                    <input type="file" id="photoUpload" name="Photos" accept="image/png, image/jpeg" multiple style="padding: 10px; background: #fff;">
-                    <p id="fileError" style="color: red; display: none; font-size: 0.9rem; margin-top: -10px; margin-bottom: 15px;">Please select no more than 5 images.</p>
+                <div style="margin-bottom: 25px; text-align: center; background: #e0f2fe; padding: 15px; border-radius: 8px; border: 1px solid #bae6fd;">
+                    <p style="margin: 0; color: #0369a1; font-weight: bold;">📸 Have photos to share?</p>
+                    <p style="margin: 5px 0 0 0; font-size: 0.95rem; color: #0c4a6e;">Submit your review below, then send your favorite photos to us on Viber or WhatsApp at <strong>+359 88 285 0909</strong> so we can add them to our page!</p>
                 </div>
 
-                <button type="submit" class="btn" id="submitBtn" style="width: 100%;">Submit Review</button>
+                <button type="submit" class="btn" style="width: 100%;">Submit Review</button>
             </form>
         </div>
 
@@ -71,23 +70,6 @@
         // Mobile Menu
         document.getElementById('mobile-menu').addEventListener('click', function() {
             document.getElementById('nav-links').classList.toggle('active');
-        });
-
-        // Limit File Uploads to 5 Max
-        const fileInput = document.getElementById('photoUpload');
-        const submitBtn = document.getElementById('submitBtn');
-        const fileError = document.getElementById('fileError');
-
-        fileInput.addEventListener('change', function() {
-            if (this.files.length > 5) {
-                fileError.style.display = 'block';
-                submitBtn.disabled = true;
-                submitBtn.style.opacity = '0.5';
-            } else {
-                fileError.style.display = 'none';
-                submitBtn.disabled = false;
-                submitBtn.style.opacity = '1';
-            }
         });
 
         // Scroll Fade-In Observer
