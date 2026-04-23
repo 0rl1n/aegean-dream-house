@@ -5,6 +5,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Guest Reviews | Aegean Dream House</title>
     <link rel="stylesheet" href="style.css">
+    <style>
+        .translate-btn {
+            background: none;
+            border: none;
+            color: #38bdf8; /* Light blue accent color */
+            cursor: pointer;
+            font-size: 0.9rem;
+            text-decoration: underline;
+            padding: 0;
+            margin-top: 5px;
+            font-family: inherit;
+        }
+        .translate-btn:hover {
+            color: #7dd3fc;
+        }
+    </style>
 </head>
 <body>
 
@@ -58,7 +74,56 @@
         </div>
 
         <div class="grid" id="reviewList">
+            
+            <div class="card fade-up" style="border-top-color: #fbbf24;">
+                <h4 style="margin-bottom: 5px; font-size: 1.3rem;">Васка</h4>
+                <p style="font-size: 0.9rem; color: #777; margin-bottom: 10px;">🇧🇬 From: Bulgaria | 🌙 Stayed: 5 Nights</p>
+                <div style="color: #fbbf24; margin-bottom: 15px; font-size: 1.2rem;">⭐⭐⭐⭐⭐ (10/10)</div>
+                <p class="review-text" data-original="Къщата е много комфортна, има всякакви удобства." data-translated="The house is very comfortable, it has all kinds of amenities." style="font-style: italic; margin-bottom: 5px;">"Къщата е много комфортна, има всякакви удобства."</p>
+                <button class="translate-btn" onclick="toggleTranslation(this)">Translate to English</button>
             </div>
+
+            <div class="card fade-up" style="border-top-color: #fbbf24;">
+                <h4 style="margin-bottom: 5px; font-size: 1.3rem;">Elena</h4>
+                <p style="font-size: 0.9rem; color: #777; margin-bottom: 10px;">👤 Solo Traveler | 🌙 Stayed: 7 Nights</p>
+                <div style="color: #fbbf24; margin-bottom: 15px; font-size: 1.2rem;">⭐⭐⭐⭐⭐ (10/10)</div>
+                <p class="review-text" data-original="На пешеходно разстояние от плажа. Кварталът е много тих, няма шум от заведения или потоци от хора. Къщата е обзаведена с всичко необходимо, без да е претрупана излишно. Много удобно и функционално обзаведено. Много чисто! Имахме и междинно почистване и смяна на чаршафи и хавлии. С удоволствие ще посетим пак." data-translated="Within walking distance of the beach. The neighborhood is very quiet, no noise from restaurants or streams of people. The house is furnished with everything you need, without being overly cluttered. Very comfortable and functionally furnished. Very clean! We also had intermediate cleaning and a change of sheets and towels. We will gladly visit again." style="font-style: italic; margin-bottom: 5px;">"На пешеходно разстояние от плажа. Кварталът е много тих, няма шум от заведения или потоци от хора. Къщата е обзаведена с всичко необходимо, без да е претрупана излишно. Много удобно и функционално обзаведено. Много чисто! Имахме и междинно почистване и смяна на чаршафи и хавлии. С удоволствие ще посетим пак."</p>
+                <button class="translate-btn" onclick="toggleTranslation(this)">Translate to English</button>
+            </div>
+
+            <div class="card fade-up" style="border-top-color: #fbbf24;">
+                <h4 style="margin-bottom: 5px; font-size: 1.3rem;">Diana</h4>
+                <p style="font-size: 0.9rem; color: #777; margin-bottom: 10px;">🇲🇩 From: Moldova | 🌙 Stayed: 10 Nights</p>
+                <div style="color: #fbbf24; margin-bottom: 15px; font-size: 1.2rem;">⭐⭐⭐⭐⭐ (10/10)</div>
+                <p class="review-text" data-original="Замечательный дом для отдыха, который был оснащён всем нужным для жилья. В доме уютно, всё новое, чистое. До пляжа минуты 3 ходьбы. Мы заехали немного раньше времени, кондиционеры уже работали, за что особая благодарность хозяевам 🫶. Рекомендуем!" data-translated="A wonderful vacation home, which was equipped with everything necessary for living. The house is cozy, everything is new and clean. The beach is a 3-minute walk away. We checked in a little ahead of time, the air conditioners were already working, for which special thanks to the hosts 🫶. We recommend it!" style="font-style: italic; margin-bottom: 5px;">"Замечательный дом для отдыха, который был оснащён всем нужным для жилья. В доме уютно, всё новое, чистое. До пляжа минуты 3 ходьбы. Мы заехали немного раньше времени, кондиционеры уже работали, за что особая благодарность хозяевам 🫶. Рекомендуем!"</p>
+                <button class="translate-btn" onclick="toggleTranslation(this)">Translate to English</button>
+            </div>
+
+            <div class="card fade-up" style="border-top-color: #fbbf24;">
+                <h4 style="margin-bottom: 5px; font-size: 1.3rem;">Gergana</h4>
+                <p style="font-size: 0.9rem; color: #777; margin-bottom: 10px;">🇧🇬 From: Bulgaria | 🌙 Stayed: 5 Nights</p>
+                <div style="color: #fbbf24; margin-bottom: 15px; font-size: 1.2rem;">⭐⭐⭐⭐⭐ (10/10)</div>
+                <p class="review-text" data-original="Страхотна къща с всички удобства! Чисто, с усет към детайла, разполагаш с всичко необходимо за една прекрасна почивка. Плажът е в непосредствена близост." data-translated="Great house with all amenities! Clean, with an eye for detail, you have everything you need for a wonderful vacation. The beach is in close proximity." style="font-style: italic; margin-bottom: 5px;">"Страхотна къща с всички удобства! Чисто, с усет към детайла, разполагаш с всичко необходимо за една прекрасна почивка. Плажът е в непосредствена близост."</p>
+                <button class="translate-btn" onclick="toggleTranslation(this)">Translate to English</button>
+            </div>
+
+            <div class="card fade-up" style="border-top-color: #fbbf24;">
+                <h4 style="margin-bottom: 5px; font-size: 1.3rem;">Iliyan</h4>
+                <p style="font-size: 0.9rem; color: #777; margin-bottom: 10px;">🇧🇬 From: Bulgaria | 🌙 Stayed: 2 Nights</p>
+                <div style="color: #fbbf24; margin-bottom: 15px; font-size: 1.2rem;">⭐⭐⭐⭐⭐ (10/10)</div>
+                <p class="review-text" data-original="Всичко ни хареса! Чистотата, разположението на спалните, огромната тераса с гледка към морето и най-важното е , че плажа е на 1 минута . Тихо и спокойно местенце за прекрасна почивка. Ще се върнем със сигурност!" data-translated="We liked everything! The cleanliness, the layout of the bedrooms, the huge terrace with a sea view and most importantly, the beach is 1 minute away. A quiet and peaceful place for a wonderful vacation. We will return for sure!" style="font-style: italic; margin-bottom: 5px;">"Всичко ни хареса! Чистотата, разположението на спалните, огромната тераса с гледка към морето и най-важното е , че плажа е на 1 минута . Тихо и спокойно местенце за прекрасна почивка. Ще се върнем със сигурност!"</p>
+                <button class="translate-btn" onclick="toggleTranslation(this)">Translate to English</button>
+            </div>
+
+            <div class="card fade-up" style="border-top-color: #fbbf24;">
+                <h4 style="margin-bottom: 5px; font-size: 1.3rem;">Margarita</h4>
+                <p style="font-size: 0.9rem; color: #777; margin-bottom: 10px;">🇧🇬 From: Bulgaria | 🌙 Stayed: 2 Nights</p>
+                <div style="color: #fbbf24; margin-bottom: 15px; font-size: 1.2rem;">⭐⭐⭐⭐⭐ (10/10)</div>
+                <p class="review-text" data-original="Aegean Dream House – мястото, където мечтите се събуждат край морето. Престоят ми в Aegean Dream House в Офринио, Гърция." data-translated="Aegean Dream House - the place where dreams wake up by the sea. My stay at Aegean Dream House in Ofrinio, Greece." style="font-style: italic; margin-bottom: 5px;">"Aegean Dream House – мястото, където мечтите се събуждат край морето. Престоят ми в Aegean Dream House в Офринио, Гърция."</p>
+                <button class="translate-btn" onclick="toggleTranslation(this)">Translate to English</button>
+            </div>
+
+        </div>
     </section>
 
     <footer>
@@ -84,6 +149,24 @@
         }, appearOptions);
 
         fadeElements.forEach(element => appearOnScroll.observe(element));
+
+        // Translation Function
+        function toggleTranslation(button) {
+            // Find the paragraph right above the button
+            const reviewTextElement = button.previousElementSibling;
+            
+            // Grab the hidden original and translated texts from our HTML data attributes
+            const originalText = reviewTextElement.getAttribute('data-original');
+            const translatedText = reviewTextElement.getAttribute('data-translated');
+
+            if (button.innerText === "Translate to English") {
+                reviewTextElement.innerText = '"' + translatedText + '"';
+                button.innerText = "Show Original";
+            } else {
+                reviewTextElement.innerText = '"' + originalText + '"';
+                button.innerText = "Translate to English";
+            }
+        }
     </script>
 </body>
 </html>
