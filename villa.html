@@ -8,73 +8,41 @@
 </head>
 <body>
 
-<nav>
-        <a href="index.html" class="logo">
-            🌊 Aegean Dream House
-        </a>
+    <nav>
+        <a href="index.html" class="logo">🌊 Aegean Dream House</a>
         <div class="menu-toggle" id="mobile-menu">
             <span class="bar"></span><span class="bar"></span><span class="bar"></span>
         </div>
         <div class="nav-links" id="nav-links">
             <a href="index.html">Home</a>
-            <a href="villa.html">The Villa</a>
+            <a href="villa.html" style="color: var(--accent-blue);">The Villa</a>
             <a href="town.html">The Town</a>
             <a href="reviews.html">Guest Reviews</a>
-            
             <div id="google_translate_element" style="display: flex; align-items: center; margin: 0 10px;"></div>
-            
             <a href="https://www.booking.com/Share-u95qrv" target="_blank" class="btn">Book Now</a>
         </div>
     </nav>
 
     <section class="section">
-        <h2 class="section-title fade-up">Step Inside Your Dream Holiday</h2>
-        <p class="fade-up" style="text-align: center; max-width: 800px; margin: 0 auto 50px auto; font-size: 1.15rem; color: #555;">
-            Welcome to your luxurious Aegean home-away-from-home. Our air-conditioned villa is meticulously designed with modern amenities and Mediterranean touches to create a sense of elegant comfort. Click any image to enlarge.
-        </p>
+        <h2 class="section-title fade-up">Inside The Villa</h2>
+        
+        <div class="card fade-up" style="margin-bottom: 40px;">
+            <p>Our villa is fully equipped with everything you need for a comfortable stay. From the spacious bedrooms to the relaxing terrace with a sea view, every detail is designed for your perfect holiday.</p>
+            <p style="margin-top: 10px; font-style: italic; color: #64748b;">Click on any image below to enlarge it.</p>
+        </div>
 
-        <div class="photo-gallery">
-            <img src="images/Screenshot 2026-04-21 232718.png" alt="Villa View" class="fade-up">
-            <img src="images/Screenshot 2026-04-21 232806.png" alt="Villa View" class="fade-up">
-            <img src="images/Screenshot 2026-04-21 232816.png" alt="Villa View" class="fade-up">
-            <img src="images/Screenshot 2026-04-21 232829.png" alt="Villa View" class="fade-up">
-            <img src="images/Screenshot 2026-04-21 232847.png" alt="Villa View" class="fade-up">
-            
-            <img src="images/Screenshot 2026-04-21 232859.png" alt="Villa View" class="fade-up">
-            <img src="images/Screenshot 2026-04-21 232914.png" alt="Villa View" class="fade-up">
-            <img src="images/Screenshot 2026-04-21 232927.png" alt="Villa View" class="fade-up">
-            <img src="images/Screenshot 2026-04-21 232937.png" alt="Villa View" class="fade-up">
-            <img src="images/Screenshot 2026-04-21 232952.png" alt="Villa View" class="fade-up">
-            
-            <img src="images/Screenshot 2026-04-21 233007.png" alt="Villa View" class="fade-up">
-            <img src="images/Screenshot 2026-04-21 233021.png" alt="Villa View" class="fade-up">
-            <img src="images/Screenshot 2026-04-21 233035.png" alt="Villa View" class="fade-up">
-            <img src="images/Screenshot 2026-04-21 233043.png" alt="Villa View" class="fade-up">
-            <img src="images/Screenshot 2026-04-21 233053.png" alt="Villa View" class="fade-up">
-            
-            <img src="images/Screenshot 2026-04-21 233104.png" alt="Villa View" class="fade-up">
-            <img src="images/Screenshot 2026-04-21 233114.png" alt="Villa View" class="fade-up">
-            <img src="images/Screenshot 2026-04-21 233121.png" alt="Villa View" class="fade-up">
-            <img src="images/Screenshot 2026-04-21 233130.png" alt="Villa View" class="fade-up">
-            <img src="images/Screenshot 2026-04-21 233150.png" alt="Villa View" class="fade-up">
-            
-            <img src="images/Screenshot 2026-04-21 233158.png" alt="Villa View" class="fade-up">
-            <img src="images/Screenshot 2026-04-21 233207.png" alt="Villa View" class="fade-up">
-            <img src="images/Screenshot 2026-04-21 233216.png" alt="Villa View" class="fade-up">
-            <img src="images/Screenshot 2026-04-21 233222.png" alt="Villa View" class="fade-up">
-            <img src="images/Screenshot 2026-04-21 233230.png" alt="Villa View" class="fade-up">
-            
-            <img src="images/Screenshot 2026-04-21 233237.png" alt="Villa View" class="fade-up">
-            <img src="images/Screenshot 2026-04-21 233248.png" alt="Villa View" class="fade-up">
-            <img src="images/Screenshot 2026-04-21 233258.png" alt="Villa View" class="fade-up">
-            <img src="images/Screenshot 2026-04-21 233306.png" alt="Villa View" class="fade-up">
-            <img src="images/Screenshot 2026-04-21 233314.png" alt="Villa View" class="fade-up">
+        <div class="gallery-grid">
+            <img src="images/villa1.jpg" alt="Villa Exterior" class="gallery-img interactive fade-up">
+            <img src="images/villa2.jpg" alt="Living Room" class="gallery-img interactive fade-up">
+            <img src="images/villa3.jpg" alt="Bedroom" class="gallery-img interactive fade-up">
+            <img src="images/villa4.jpg" alt="Kitchen" class="gallery-img interactive fade-up">
+            <img src="images/villa5.jpg" alt="Terrace" class="gallery-img interactive fade-up">
         </div>
     </section>
 
-    <div id="imageModal" class="modal">
-        <span class="close-modal">&times;</span>
-        <img class="modal-content" id="enlargedImg">
+    <div class="lightbox" id="lightbox">
+        <span class="close-lightbox" id="closeLightbox">&times;</span>
+        <img id="lightboxImg" src="" alt="Enlarged view">
     </div>
 
     <footer>
@@ -83,28 +51,11 @@
     </footer>
 
     <script>
-        // Mobile Menu
+        // Standard Scripts
         document.getElementById('mobile-menu').addEventListener('click', function() {
             document.getElementById('nav-links').classList.toggle('active');
         });
 
-        // Lightbox/Modal Logic
-        const modal = document.getElementById("imageModal");
-        const modalImg = document.getElementById("enlargedImg");
-        const closeBtn = document.getElementsByClassName("close-modal")[0];
-        const galleryImages = document.querySelectorAll('.photo-gallery img');
-
-        galleryImages.forEach(img => {
-            img.addEventListener('click', function() {
-                modal.style.display = "block";
-                modalImg.src = this.src;
-            });
-        });
-
-        closeBtn.onclick = function() { modal.style.display = "none"; }
-        modal.onclick = function(event) { if (event.target !== modalImg) { modal.style.display = "none"; } }
-
-        // Scroll Fade-In Observer
         const fadeElements = document.querySelectorAll('.fade-up');
         const appearOptions = { threshold: 0.15, rootMargin: "0px 0px -50px 0px" };
         const appearOnScroll = new IntersectionObserver(function(entries, observer) {
@@ -114,18 +65,32 @@
                 observer.unobserve(entry.target);
             });
         }, appearOptions);
-
         fadeElements.forEach(element => appearOnScroll.observe(element));
-    </script>
-    
-<script type="text/javascript">
+
         function googleTranslateElementInit() {
             new google.translate.TranslateElement({
-                pageLanguage: 'en', // Your website's original language
-                includedLanguages: 'en,bg,ro,ru,tr', // The exact languages you requested
+                pageLanguage: 'en', includedLanguages: 'en,bg,ro,ru,tr',
                 layout: google.translate.TranslateElement.InlineLayout.SIMPLE
             }, 'google_translate_element');
         }
+
+        // Lightbox Scripts
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImg = document.getElementById('lightboxImg');
+        const closeBtn = document.getElementById('closeLightbox');
+        const images = document.querySelectorAll('.gallery-img.interactive');
+
+        images.forEach(img => {
+            img.addEventListener('click', () => {
+                lightbox.classList.add('active');
+                lightboxImg.src = img.src;
+            });
+        });
+
+        closeBtn.addEventListener('click', () => lightbox.classList.remove('active'));
+        lightbox.addEventListener('click', (e) => {
+            if(e.target !== lightboxImg) lightbox.classList.remove('active');
+        });
     </script>
     <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 </body>
