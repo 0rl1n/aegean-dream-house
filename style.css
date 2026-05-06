@@ -319,3 +319,12 @@ body { top: 0px !important; }
 .goog-te-gadget-simple { background-color: var(--light-blue) !important; border: none !important; border-radius: 20px !important; padding: 8px 15px !important; font-family: inherit !important; display: flex !important; align-items: center !important; }
 .goog-te-menu-value span { color: var(--primary-blue) !important; font-weight: bold !important; text-decoration: none !important; }
 .goog-te-gadget-icon { display: none !important; }
+
+/* --- Custom Logo Sizing --- */
+.nav-logo {
+    height: 45px; /* Keeps the logo the perfect size for the menu */
+    width: auto;
+    margin-right: 12px;
+    border-radius: 50%; /* Keeps the circular shape perfectly round */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Adds a tiny shadow to make it pop */
+}
