@@ -3,118 +3,61 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aegean Dream House | Home</title>
+    <title>Aegean Dream House | Paralia Ofriniou</title>
     <link rel="stylesheet" href="style.css">
-    <style>
-        header {
-            background: linear-gradient(rgba(2, 62, 115, 0.5), rgba(2, 62, 115, 0.2)), url('https://images.unsplash.com/photo-1499793983690-e29da59ef1c2?auto=format&fit=crop&w=1600&q=80') center/cover;
-            /* Added a slow, dreamy background zoom effect to the banner */
-            background-attachment: fixed; 
-        }
-    </style>
 </head>
 <body>
 
-<nav>
-        <a href="index.html" class="logo">
-            🌊 Aegean Dream House
-        </a>
+    <nav>
+        <a href="index.html" class="logo">🌊 Aegean Dream House</a>
         <div class="menu-toggle" id="mobile-menu">
             <span class="bar"></span><span class="bar"></span><span class="bar"></span>
         </div>
         <div class="nav-links" id="nav-links">
-            <a href="index.html">Home</a>
+            <a href="index.html" style="color: var(--accent-blue);">Home</a>
             <a href="villa.html">The Villa</a>
             <a href="town.html">The Town</a>
             <a href="reviews.html">Guest Reviews</a>
-            
             <div id="google_translate_element" style="display: flex; align-items: center; margin: 0 10px;"></div>
-            
             <a href="https://www.booking.com/Share-u95qrv" target="_blank" class="btn">Book Now</a>
         </div>
     </nav>
 
-    <header>
-        <h1>Your Aegean Escape Awaits</h1>
-        <p>Experience unmatched comfort and breathtaking sea views in the heart of Paralia Ofriniou. Hosted by Asya Stoilkova.</p>
-        <a href="#welcome" class="btn" style="background: transparent; border: 2px solid white; box-shadow: none;">Discover More</a>
-    </header>
-
-    <section id="welcome" class="section">
-        <h2 class="section-title fade-up">Welcome to Paradise</h2>
-        <div class="fade-up" style="text-align: center; max-width: 800px; margin: 0 auto 50px auto; font-size: 1.15rem; color: #555;">
-            <p>Aegean Dream House is more than just a place to sleep; it is your private oasis. Located perfectly to capture the ocean breeze, our home is designed to give you the ultimate Greek holiday experience. Whether you are sipping coffee on the terrace or exploring the vibrant local town, your perfect vacation starts right here.</p>
-        </div>
-
-        <div class="grid">
-            <div class="card fade-up">
-                <h3 style="font-size: 2.8rem; margin-bottom: 15px;">🏡</h3>
-                <h3>The Property</h3>
-                <p>Fully equipped kitchen, two spacious bedrooms, and an outdoor dining area set in a beautifully maintained garden.</p>
-                <br>
-                <a href="villa.html" style="color: var(--accent-blue); font-weight: bold; text-decoration: none; display: inline-block; margin-top: 10px;">Tour the Villa →</a>
-            </div>
-            <div class="card fade-up" style="transition-delay: 0.1s;">
-                <h3 style="font-size: 2.8rem; margin-bottom: 15px;">🏖️</h3>
-                <h3>The Location</h3>
-                <p>Just steps away from golden sandy beaches, lively promenades, and the best traditional tavernas in Paralia Ofriniou.</p>
-                <br>
-                <a href="town.html" style="color: var(--accent-blue); font-weight: bold; text-decoration: none; display: inline-block; margin-top: 10px;">Explore the Town →</a>
-            </div>
-            <div class="card fade-up" style="transition-delay: 0.2s;">
-                <h3 style="font-size: 2.8rem; margin-bottom: 15px;">⭐</h3>
-                <h3>The Experience</h3>
-                <p>Rated exceptional by our guests. Read what previous visitors have to say about their stay, or leave your own feedback.</p>
-                <br>
-                <a href="reviews.html" style="color: var(--accent-blue); font-weight: bold; text-decoration: none; display: inline-block; margin-top: 10px;">Read Reviews →</a>
-            </div>
+    <section class="section">
+        <h1 class="section-title fade-up">Welcome to Your Dream Vacation</h1>
+        
+        <div class="card fade-up" style="text-align: center;">
+            <h2 style="margin-bottom: 20px; color: var(--primary-blue);">Experience the Beauty of Paralia Ofriniou</h2>
+            <p style="font-size: 1.1rem; margin-bottom: 30px;">Just steps away from the crystal-clear Aegean Sea, our beautifully designed villa offers the perfect blend of comfort, tranquility, and luxury for your Greek getaway.</p>
+            <a href="villa.html" class="btn">Explore the Villa</a>
         </div>
     </section>
 
     <footer>
         <h2 style="font-family: 'Georgia', serif; margin-bottom: 10px;">Aegean Dream House</h2>
-        <p>Odos Verginas, Paralia Ofriniou 640 08, Greece</p>
-        <p>Host: Asya Stoilkova | Phone: +359 88 781 2462</p>
-        <br>
-        <p style="opacity: 0.5; font-size: 0.9rem;">© 2026 Aegean Dream House. All Rights Reserved.</p>
+        <p>Paralia Ofriniou, Greece | Contact: +359 88 781 2462</p>
     </footer>
 
     <script>
-        // Mobile Menu
         document.getElementById('mobile-menu').addEventListener('click', function() {
             document.getElementById('nav-links').classList.toggle('active');
         });
 
-        // --- NEW: Scroll Fade-In Observer ---
-        // This watches elements as you scroll and smoothly fades them in
         const fadeElements = document.querySelectorAll('.fade-up');
-        
-        const appearOptions = {
-            threshold: 0.15, // Trigger when 15% of the element is visible
-            rootMargin: "0px 0px -50px 0px"
-        };
-
+        const appearOptions = { threshold: 0.15, rootMargin: "0px 0px -50px 0px" };
         const appearOnScroll = new IntersectionObserver(function(entries, observer) {
             entries.forEach(entry => {
-                if (!entry.isIntersecting) {
-                    return;
-                } else {
-                    entry.target.classList.add('visible');
-                    observer.unobserve(entry.target); // Only animate once
-                }
+                if (!entry.isIntersecting) return;
+                entry.target.classList.add('visible');
+                observer.unobserve(entry.target);
             });
         }, appearOptions);
+        fadeElements.forEach(element => appearOnScroll.observe(element));
 
-        fadeElements.forEach(element => {
-            appearOnScroll.observe(element);
-        });
-    </script>
-    
-<script type="text/javascript">
         function googleTranslateElementInit() {
             new google.translate.TranslateElement({
-                pageLanguage: 'en', // Your website's original language
-                includedLanguages: 'en,bg,ro,ru,tr', // The exact languages you requested
+                pageLanguage: 'en',
+                includedLanguages: 'en,bg,ro,ru,tr',
                 layout: google.translate.TranslateElement.InlineLayout.SIMPLE
             }, 'google_translate_element');
         }
