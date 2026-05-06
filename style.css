@@ -22,17 +22,40 @@ body {
     background-color: var(--bg-color);
     color: var(--text-color);
     line-height: 1.7;
-    overflow-x: hidden; /* Prevents horizontal scrolling */
+    overflow-x: hidden; 
 }
 
-/* --- 2. Floating Navigation Bar --- */
+/* --- 2. THE AEGEAN BACKGROUND THEMES --- */
+/* The "Live" Drifting Background for the Home Page */
+.live-bg {
+    background-image: linear-gradient(rgba(240, 249, 255, 0.75), rgba(255, 255, 255, 0.95)), url('https://images.unsplash.com/photo-1503177119275-0aa32b3a9368?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
+    background-size: 120%;
+    background-attachment: fixed;
+    animation: oceanDrift 30s infinite alternate linear;
+}
+
+@keyframes oceanDrift {
+    0% { background-position: 0% 50%; }
+    100% { background-position: 100% 50%; }
+}
+
+/* The Static, Bright Background for the Other Pages */
+.static-bg {
+    background-image: linear-gradient(rgba(240, 249, 255, 0.85), rgba(255, 255, 255, 0.98)), url('https://images.unsplash.com/photo-1503177119275-0aa32b3a9368?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+
+/* --- 3. Floating Navigation Bar --- */
 nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 15px 5%;
     background-color: rgba(255, 255, 255, 0.95);
-    backdrop-filter: blur(10px); /* Gives a premium frosted glass effect */
+    backdrop-filter: blur(10px); 
     box-shadow: 0 4px 30px rgba(0,0,0,0.05);
     position: sticky;
     top: 0;
@@ -67,7 +90,6 @@ nav {
     transition: color 0.3s ease;
 }
 
-/* Elegant underline hover effect */
 .nav-links a::after {
     content: '';
     position: absolute;
@@ -87,12 +109,11 @@ nav {
     color: var(--accent-blue);
 }
 
-/* --- Buttons --- */
 .btn {
     background: linear-gradient(135deg, var(--accent-blue), var(--primary-blue));
     color: #fff !important;
     padding: 12px 24px;
-    border-radius: 30px; /* Softer, pill-shaped buttons */
+    border-radius: 30px; 
     font-weight: bold;
     border: none;
     cursor: pointer;
@@ -108,10 +129,10 @@ nav {
 }
 
 .btn::after {
-    display: none; /* Removes the underline effect from the button */
+    display: none; 
 }
 
-/* --- 3. Sections & Floating Cards --- */
+/* --- 4. Sections & Floating Cards --- */
 .section {
     padding: 80px 5%;
     max-width: 1200px;
@@ -135,10 +156,10 @@ nav {
 }
 
 .card {
-    background: #fff;
+    background: rgba(255, 255, 255, 0.95); /* Slightly translucent to show background */
     padding: 30px;
-    border-radius: 20px; /* Softer corners */
-    box-shadow: 0 10px 30px rgba(0,0,0,0.06); /* Soft, floating shadow */
+    border-radius: 20px; 
+    box-shadow: 0 10px 30px rgba(0,0,0,0.06); 
     border-top: 5px solid var(--accent-blue);
     transition: transform 0.5s cubic-bezier(0.165, 0.84, 0.44, 1), box-shadow 0.5s ease;
 }
@@ -148,7 +169,7 @@ nav {
     box-shadow: 0 20px 40px rgba(0,0,0,0.12);
 }
 
-/* --- 4. PERFECT IMAGE GALLERIES --- */
+/* --- 5. Image Galleries --- */
 .gallery-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -158,30 +179,29 @@ nav {
 
 .gallery-img {
     width: 100%;
-    height: 280px; /* Forces all images to be exactly this tall */
-    object-fit: cover; /* Crops perfectly without stretching */
-    border-radius: 15px; /* Smooth corners */
+    height: 280px; 
+    object-fit: cover; 
+    border-radius: 15px; 
     box-shadow: 0 5px 15px rgba(0,0,0,0.08);
     transition: transform 0.5s cubic-bezier(0.165, 0.84, 0.44, 1), box-shadow 0.5s ease;
 }
 
-/* Only applies hover effect to Villa images */
 .gallery-img.interactive:hover {
     transform: scale(1.03);
     cursor: zoom-in;
     box-shadow: 0 15px 30px rgba(0,0,0,0.15);
 }
 
-/* --- 5. LIGHTBOX (Enlarge Image Overlay) --- */
+/* --- 6. Lightbox --- */
 .lightbox {
-    display: none; /* Hidden by default */
+    display: none; 
     position: fixed;
     z-index: 9999;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(12, 74, 110, 0.95); /* Deep blue premium backdrop */
+    background: rgba(12, 74, 110, 0.95); 
     backdrop-filter: blur(5px);
     align-items: center;
     justify-content: center;
@@ -221,9 +241,9 @@ nav {
     transform: scale(1.1) rotate(90deg);
 }
 
-/* --- 6. Form Styles --- */
+/* --- 7. Forms --- */
 .review-form {
-    background: #fff;
+    background: rgba(255, 255, 255, 0.95);
     padding: 40px;
     border-radius: 20px;
     box-shadow: 0 10px 30px rgba(0,0,0,0.06);
@@ -248,11 +268,10 @@ input:focus, select:focus, textarea:focus {
     box-shadow: 0 0 0 4px rgba(2, 132, 199, 0.1);
 }
 
-/* --- 7. Smooth Scroll Animations --- */
+/* --- 8. Smooth Scroll Animations --- */
 .fade-up {
     opacity: 0;
     transform: translateY(40px);
-    /* The cubic-bezier makes it slow down smoothly at the end */
     transition: opacity 1s cubic-bezier(0.25, 1, 0.5, 1), transform 1s cubic-bezier(0.25, 1, 0.5, 1);
 }
 
@@ -261,7 +280,7 @@ input:focus, select:focus, textarea:focus {
     transform: translateY(0);
 }
 
-/* --- 8. Footer --- */
+/* --- 9. Footer --- */
 footer {
     background: linear-gradient(to right, var(--primary-blue), #0f5c8a);
     color: #fff;
@@ -272,7 +291,7 @@ footer {
     border-top-right-radius: 40px;
 }
 
-/* --- Mobile Menu & Google Translate Keep Same Logic --- */
+/* --- 10. Mobile Menu & Translate Menu --- */
 .menu-toggle { display: none; flex-direction: column; cursor: pointer; }
 .menu-toggle .bar { width: 25px; height: 3px; background-color: var(--primary-blue); margin: 4px 0; transition: 0.3s; border-radius: 3px; }
 @media (max-width: 768px) {
