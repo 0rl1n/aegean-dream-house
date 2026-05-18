@@ -4,6 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The Town | Aegean Dream House</title>
+    <meta name="description" content="Discover Paralia Ofriniou - peaceful beaches, traditional Greek tavernas, and local dining recommendations near Aegean Dream House.">
+    <meta property="og:title" content="The Town | Aegean Dream House">
+    <meta property="og:description" content="Discover Paralia Ofriniou - peaceful beaches, traditional Greek tavernas, and hidden gems near Aegean Dream House.">
+    <meta property="og:image" content="https://aegeandream.net/images/logo.jpg">
+    <meta property="og:url" content="https://aegeandream.net/town.html">
+    <meta property="og:type" content="website">
+    <link rel="canonical" href="https://aegeandream.net/town.html">
     <link rel="stylesheet" href="style.css">
     <link rel="icon" href="images/logo.jpg">
 </head>
@@ -11,7 +18,7 @@
 
     <nav>
         <a href="index.html" class="logo">
-            <img src="images/logo.jpg" alt="Aegean Dream Logo" class="nav-logo">
+            <img src="images/logo.jpg" alt="Aegean Dream House logo" class="nav-logo">
             Aegean Dream House
         </a>
         <div class="menu-toggle" id="mobile-menu">
@@ -20,97 +27,75 @@
         <div class="nav-links" id="nav-links">
             <a href="index.html">Home</a>
             <a href="villa.html">The Villa</a>
-            <a href="town.html" style="color: var(--accent-blue);">The Town</a>
+            <a href="town.html" class="nav-link--active">The Town</a>
             <a href="reviews.html">Guest Reviews</a>
-            <div id="google_translate_element" style="display: flex; align-items: center; margin: 0 10px;"></div>
-            <a href="https://www.booking.com/Share-u95qrv" target="_blank" class="btn">Book Now</a>
+            <div id="google_translate_element" class="nav-translate"></div>
+            <a href="https://www.booking.com/Share-u95qrv" target="_blank" rel="noopener noreferrer" class="btn">Book Now</a>
         </div>
     </nav>
 
     <section class="section">
         <h2 class="section-title fade-up">Paralia Ofriniou</h2>
-        
-        <div class="card fade-up" style="margin-bottom: 40px;">
+
+        <div class="card gallery-intro fade-up">
             <p>Paralia Ofriniou is a beautiful, peaceful coastal town. Enjoy quiet strolls along the beach, delicious traditional Greek cuisine at local tavernas, and a friendly, welcoming atmosphere away from the noisy crowds.</p>
         </div>
 
         <div class="gallery-grid">
-            <img src="images/03fc8dec-45f9-48cd-8240-7ac2c30149c5.jpg" alt="Town View 1" class="gallery-img fade-up">
-            <img src="images/5a9a002b-8302-48a8-9576-d827719ab961.jpg" alt="Town View 2" class="gallery-img fade-up">
-            <img src="images/8f4f704d-aea2-4e9b-8d4a-af9ab37615be.jpg" alt="Town View 3" class="gallery-img fade-up">
+            <img src="images/03fc8dec-45f9-48cd-8240-7ac2c30149c5.jpg" alt="Paralia Ofriniou coastal view" class="gallery-img fade-up" loading="lazy">
+            <img src="images/5a9a002b-8302-48a8-9576-d827719ab961.jpg" alt="Paralia Ofriniou beach" class="gallery-img fade-up" loading="lazy">
+            <img src="images/8f4f704d-aea2-4e9b-8d4a-af9ab37615be.jpg" alt="Paralia Ofriniou scenery" class="gallery-img fade-up" loading="lazy">
         </div>
     </section>
 
-    <section class="section" style="padding-top: 0;">
-        <h2 class="section-title fade-up" style="font-size: 2.2rem;">Local Dining Recommendations</h2>
-        
+    <section class="section section--flush-top">
+        <h2 class="section-title section-title--small fade-up">Local Dining Recommendations</h2>
+
         <div class="grid">
-            <div class="card fade-up" style="display: flex; flex-direction: column; justify-content: space-between;">
+            <div class="card restaurant-card fade-up">
                 <div>
-                    <h3 style="color: var(--primary-blue); font-size: 1.5rem; margin-bottom: 5px;">Meze meze</h3>
-                    <p style="color: #f59e0b; font-weight: bold; margin-bottom: 15px; font-size: 1.1rem;">⭐ 4.7 / 5</p>
-                    <p style="margin-bottom: 25px;">A highly rated spot perfect for enjoying fresh seafood and traditional Greek dishes right by the beach.</p>
+                    <h3 class="restaurant-name">Meze meze</h3>
+                    <p class="restaurant-rating">&#11088; 4.7 / 5</p>
+                    <p class="restaurant-desc">A highly rated spot perfect for enjoying fresh seafood and traditional Greek dishes right by the beach.</p>
                 </div>
-                <a href="https://maps.google.com/?q=Meze+meze+Paralia+Ofriniou+Greece" target="_blank" class="btn" style="padding: 10px;">View Location</a>
+                <a href="https://maps.google.com/?q=Meze+meze+Paralia+Ofriniou+Greece" target="_blank" rel="noopener noreferrer" class="btn btn--small">View Location</a>
             </div>
 
-            <div class="card fade-up" style="display: flex; flex-direction: column; justify-content: space-between;">
+            <div class="card restaurant-card fade-up">
                 <div>
-                    <h3 style="color: var(--primary-blue); font-size: 1.5rem; margin-bottom: 5px;">Diktamo Soul of Greece</h3>
-                    <p style="color: #f59e0b; font-weight: bold; margin-bottom: 15px; font-size: 1.1rem;">⭐ 4.5 / 5</p>
-                    <p style="margin-bottom: 25px;">Known for its modern take on classic Greek cuisine, offering a cozy setting and a great atmosphere.</p>
+                    <h3 class="restaurant-name">Diktamo Soul of Greece</h3>
+                    <p class="restaurant-rating">&#11088; 4.5 / 5</p>
+                    <p class="restaurant-desc">Known for its modern take on classic Greek cuisine, offering a cozy setting and a great atmosphere.</p>
                 </div>
-                <a href="https://maps.google.com/?q=Diktamo+Restaurant+Paralia+Ofriniou+Greece" target="_blank" class="btn" style="padding: 10px;">View Location</a>
+                <a href="https://maps.google.com/?q=Diktamo+Restaurant+Paralia+Ofriniou+Greece" target="_blank" rel="noopener noreferrer" class="btn btn--small">View Location</a>
             </div>
 
-            <div class="card fade-up" style="display: flex; flex-direction: column; justify-content: space-between;">
+            <div class="card restaurant-card fade-up">
                 <div>
-                    <h3 style="color: var(--primary-blue); font-size: 1.5rem; margin-bottom: 5px;">Orea Ellas</h3>
-                    <p style="color: #f59e0b; font-weight: bold; margin-bottom: 15px; font-size: 1.1rem;">⭐ 4.5 / 5</p>
-                    <p style="margin-bottom: 25px;">A beloved local tavern serving authentic meals with excellent service and a fantastic dining experience.</p>
+                    <h3 class="restaurant-name">Orea Ellas</h3>
+                    <p class="restaurant-rating">&#11088; 4.5 / 5</p>
+                    <p class="restaurant-desc">A beloved local tavern serving authentic meals with excellent service and a fantastic dining experience.</p>
                 </div>
-                <a href="https://maps.google.com/?q=Orea+Ellas+Paralia+Ofriniou+Greece" target="_blank" class="btn" style="padding: 10px;">View Location</a>
+                <a href="https://maps.google.com/?q=Orea+Ellas+Paralia+Ofriniou+Greece" target="_blank" rel="noopener noreferrer" class="btn btn--small">View Location</a>
             </div>
 
-            <div class="card fade-up" style="display: flex; flex-direction: column; justify-content: space-between;">
+            <div class="card restaurant-card fade-up">
                 <div>
-                    <h3 style="color: var(--primary-blue); font-size: 1.5rem; margin-bottom: 5px;">PARADISO prime</h3>
-                    <p style="color: #f59e0b; font-weight: bold; margin-bottom: 15px; font-size: 1.1rem;">⭐ 4.4 / 5</p>
-                    <p style="margin-bottom: 25px;">A highly popular prime location offering fantastic meals, fresh ingredients, and a wonderful atmosphere to enjoy your time in Ofrinio.</p>
+                    <h3 class="restaurant-name">PARADISO prime</h3>
+                    <p class="restaurant-rating">&#11088; 4.4 / 5</p>
+                    <p class="restaurant-desc">A highly popular prime location offering fantastic meals, fresh ingredients, and a wonderful atmosphere to enjoy your time in Ofrinio.</p>
                 </div>
-                <a href="https://maps.google.com/?cid=14563332864348754305&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQ" target="_blank" class="btn" style="padding: 10px;">View Location</a>
+                <a href="https://maps.google.com/?cid=14563332864348754305&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQ" target="_blank" rel="noopener noreferrer" class="btn btn--small">View Location</a>
             </div>
         </div>
     </section>
 
     <footer>
-        <h2 style="font-family: 'Georgia', serif; margin-bottom: 10px;">Aegean Dream House</h2>
+        <h2 class="footer-title">Aegean Dream House</h2>
         <p>Paralia Ofriniou, Greece | Contact: +359 88 781 2462</p>
     </footer>
 
-    <script>
-        document.getElementById('mobile-menu').addEventListener('click', function() {
-            document.getElementById('nav-links').classList.toggle('active');
-        });
-
-        const fadeElements = document.querySelectorAll('.fade-up');
-        const appearOptions = { threshold: 0.15, rootMargin: "0px 0px -50px 0px" };
-        const appearOnScroll = new IntersectionObserver(function(entries, observer) {
-            entries.forEach(entry => {
-                if (!entry.isIntersecting) return;
-                entry.target.classList.add('visible');
-                observer.unobserve(entry.target);
-            });
-        }, appearOptions);
-        fadeElements.forEach(element => appearOnScroll.observe(element));
-
-        function googleTranslateElementInit() {
-            new google.translate.TranslateElement({
-                pageLanguage: 'en', includedLanguages: 'en,bg,ro,ru,tr',
-                layout: google.translate.TranslateElement.InlineLayout.SIMPLE
-            }, 'google_translate_element');
-        }
-    </script>
-    <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+    <script src="script.js"></script>
+    <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 </body>
 </html>
