@@ -264,6 +264,7 @@ nav {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    gap: 20px;
 }
 
 .feature-icon {
@@ -278,7 +279,7 @@ nav {
 }
 
 .feature-text {
-    margin-bottom: 25px;
+    margin-bottom: 0;
 }
 
 /* --- Gallery --- */
@@ -371,6 +372,7 @@ nav {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    gap: 20px;
 }
 
 .restaurant-name {
@@ -387,7 +389,7 @@ nav {
 }
 
 .restaurant-desc {
-    margin-bottom: 25px;
+    margin-bottom: 0;
 }
 
 /* --- Reviews --- */
