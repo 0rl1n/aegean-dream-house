@@ -14,17 +14,39 @@ navLinks.querySelectorAll('a').forEach(function (link) {
     });
 });
 
-// Scroll Animations
-const fadeElements = document.querySelectorAll('.fade-up');
-const appearOnScroll = new IntersectionObserver(function (entries, observer) {
-    entries.forEach(function (entry) {
-        if (!entry.isIntersecting) return;
-        entry.target.classList.add('visible');
-        observer.unobserve(entry.target);
-    });
-}, { threshold: 0.15, rootMargin: '0px 0px -50px 0px' });
+// Nav shrink on scroll
+var nav = document.querySelector('nav');
+var lastScroll = 0;
+window.addEventListener('scroll', function () {
+    if (window.scrollY > 60) {
+        nav.classList.add('scrolled');
+    } else {
+        nav.classList.remove('scrolled');
+    }
+    lastScroll = window.scrollY;
+}, { passive: true });
 
-fadeElements.forEach(function (el) { appearOnScroll.observe(el); });
+// Scroll Animations with staggered delays
+var animatedElements = document.querySelectorAll('.fade-up, .fade-in, .slide-left, .slide-right, .scale-in');
+
+var appearOnScroll = new IntersectionObserver(function (entries, observer) {
+    var visibleEntries = [];
+    entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+            visibleEntries.push(entry);
+            observer.unobserve(entry.target);
+        }
+    });
+
+    visibleEntries.forEach(function (entry, index) {
+        var delay = index * 100;
+        setTimeout(function () {
+            entry.target.classList.add('visible');
+        }, delay);
+    });
+}, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+
+animatedElements.forEach(function (el) { appearOnScroll.observe(el); });
 
 // Google Translate
 function googleTranslateElementInit() {
@@ -35,30 +57,96 @@ function googleTranslateElementInit() {
     }, 'google_translate_element');
 }
 
-// Lightbox
+// Lightbox with navigation
 var lightbox = document.getElementById('lightbox');
 if (lightbox) {
     var lightboxImg = document.getElementById('lightboxImg');
     var closeBtn = document.getElementById('closeLightbox');
+    var prevBtn = document.getElementById('lightboxPrev');
+    var nextBtn = document.getElementById('lightboxNext');
+    var counter = document.getElementById('lightboxCounter');
+    var galleryImages = Array.from(document.querySelectorAll('.gallery-img.interactive'));
+    var currentIndex = 0;
 
-    document.querySelectorAll('.gallery-img.interactive').forEach(function (img) {
+    function showImage(index) {
+        if (index < 0) index = galleryImages.length - 1;
+        if (index >= galleryImages.length) index = 0;
+        currentIndex = index;
+
+        lightboxImg.style.opacity = '0';
+        lightboxImg.style.transform = 'scale(0.95)';
+
+        setTimeout(function () {
+            lightboxImg.src = galleryImages[currentIndex].src;
+            lightboxImg.style.opacity = '1';
+            lightboxImg.style.transform = 'scale(1)';
+        }, 150);
+
+        if (counter) {
+            counter.textContent = (currentIndex + 1) + ' / ' + galleryImages.length;
+        }
+    }
+
+    function openLightbox(index) {
+        currentIndex = index;
+        lightbox.classList.add('active');
+        lightboxImg.src = galleryImages[currentIndex].src;
+        document.body.style.overflow = 'hidden';
+        if (counter) {
+            counter.textContent = (currentIndex + 1) + ' / ' + galleryImages.length;
+        }
+    }
+
+    function closeLightbox() {
+        lightbox.classList.remove('active');
+        document.body.style.overflow = '';
+    }
+
+    galleryImages.forEach(function (img, index) {
         img.addEventListener('click', function () {
-            lightbox.classList.add('active');
-            lightboxImg.src = img.src;
+            openLightbox(index);
         });
     });
 
-    closeBtn.addEventListener('click', function () {
-        lightbox.classList.remove('active');
-    });
+    closeBtn.addEventListener('click', closeLightbox);
+
+    if (prevBtn) {
+        prevBtn.addEventListener('click', function (e) {
+            e.stopPropagation();
+            showImage(currentIndex - 1);
+        });
+    }
+
+    if (nextBtn) {
+        nextBtn.addEventListener('click', function (e) {
+            e.stopPropagation();
+            showImage(currentIndex + 1);
+        });
+    }
 
     lightbox.addEventListener('click', function (e) {
-        if (e.target !== lightboxImg) lightbox.classList.remove('active');
+        if (e.target === lightbox) closeLightbox();
     });
 
     document.addEventListener('keydown', function (e) {
-        if (e.key === 'Escape') lightbox.classList.remove('active');
+        if (!lightbox.classList.contains('active')) return;
+        if (e.key === 'Escape') closeLightbox();
+        if (e.key === 'ArrowLeft') showImage(currentIndex - 1);
+        if (e.key === 'ArrowRight') showImage(currentIndex + 1);
     });
+
+    var touchStartX = 0;
+    lightbox.addEventListener('touchstart', function (e) {
+        touchStartX = e.changedTouches[0].screenX;
+    }, { passive: true });
+
+    lightbox.addEventListener('touchend', function (e) {
+        var diff = e.changedTouches[0].screenX - touchStartX;
+        if (Math.abs(diff) > 50) {
+            if (diff > 0) showImage(currentIndex - 1);
+            else showImage(currentIndex + 1);
+        }
+    }, { passive: true });
 }
 
 // Review Translation Toggle
@@ -68,10 +156,10 @@ function toggleTranslation(button) {
     var translated = textEl.getAttribute('data-translated');
 
     if (button.textContent === 'Translate to English') {
-        textEl.textContent = '“' + translated + '”';
+        textEl.textContent = '"' + translated + '"';
         button.textContent = 'Show Original';
     } else {
-        textEl.textContent = '“' + original + '”';
+        textEl.textContent = '"' + original + '"';
         button.textContent = 'Translate to English';
     }
 }
